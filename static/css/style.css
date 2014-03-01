@@ -1,3 +1,17 @@
+html, body {
+	max-height: 100%;
+	/*overflow: hidden;*/
+}
+
+#imagegridcolumn {
+	padding: 0;
+}
+
+#imagegridrow {
+	padding: 15px;
+	max-height: 100%;
+}
+
 .hoverimage {
 	position: relative;
 }
@@ -5,10 +19,12 @@
 .hoverimage img {
 	width: 100%;
 	vertical-align: top;
+	margin: 0;
+	border: 0;
 }
 
 .hoverimage:after {
-	content: attr(data);
+	content: attr(rank);
 	color: #fff;
 	position: absolute;
 	width: 100%;
@@ -21,10 +37,10 @@
 	-webkit-transition: all 0.5s;
 }
 
-.hoverimage:hover:after {
+.hoverimage.selected:after {
 	opacity: 1;
 }
 
-li {
-	padding: 0 !important;
+.hoverimage:hover:after {
+	opacity: 1;
 }
