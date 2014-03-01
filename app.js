@@ -9,8 +9,6 @@ var jade = require('jade');
 /* Initialize express */
 var app = express();
 
-/* Define router before static to avoid static files overriding routes */
-app.use(app.router);
 /* Use static folder for static assets (css, js, img) */
 app.use(express.static('static'));
 
