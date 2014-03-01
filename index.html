@@ -1,6 +1,52 @@
 <!doctype html>
 <html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title> TentacularApps </title>
+	
+	<link rel="stylesheet" href="static/css/reveal.min.css">
+	<link rel="stylesheet" href="static/css/default.css" id="theme">
+
+	<!--Add support for earlier versions of Internet Explorer -->
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+
 <body>
-	Hello World!
+
+	<!-- Wrap entire slide show in a div using "reveal" class. -->
+	<div class="reveal">
+		<!-- Wrap all slides in a single "slides" class -->
+    	<div class="slides">
+
+    		<!-- All slides go here -->
+    		<!-- Each section element contains a single slide. -->
+        	<section>
+        		<h2> First horizontal slide </h1>
+        		<p> This is going to be awesome. </p>
+        	</section>
+
+        	<section>
+            	<section> <h2> Vertical Slide 1 </h1> </section>
+            	<section> <h2> Vertical Slide 2 </h1> </section>
+       		</section>
+
+       		<section>
+       			<h2> The End. Thanks for watching. </h1>
+       		</section>
+
+    	</div>
+	</div>
+
+	<script scr="static/js/vendor/head.min.js"></script>
+	<script src="static/js/vendor/reveal.min.js"></script>
+
+	<script>
+		Reveal.initialize({
+			history:true
+		});
+	</script>
+
 </body>
 </html>
