@@ -10,6 +10,11 @@ function runParser(){
 	console.log('parsing finished')
 }
 function filter(row, index){
+	for(var i = 0; i < row.length; i++){
+		while(row[i].charAt(0)==" "){
+			row[i] = row[i].substring(1)
+		}
+	}
 	if ((row[TOPIC]=='Ethnic origin population') || (row[TOPIC]=='Religion') || (row[TOPIC]=='Language used most often at work') || (row[TOPIC]=='Industry') || (row[TOPIC]=='Mode of transportation') || (row[TOPIC]=='Shelter costs') || (row[TOPIC]=='Income of individuals in 2010')){
 		loader.addCity(row)
 	}
