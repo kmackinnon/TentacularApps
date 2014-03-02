@@ -44,3 +44,13 @@ html, body {
 .hoverimage:hover:after {
 	opacity: 1;
 }
+
+/* TODO change the blue background when selected */
+
+.list-group-item {
+	background-color: rgb(50,50,50);
+}
+
+.list-group-item:hover {
+	background-color: rgb(20,20,20) !important;
+}
