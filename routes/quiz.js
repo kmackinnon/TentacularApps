@@ -169,19 +169,17 @@ function getMatchValues(res){
 							 
 		if(city.totalResponders > popLimit)
 			cities.splice(i,1)
-			
-		//console.log(city.name + "__" + city.totalMatch)
+		
+		if(city.province == 'British Columbia')
+			city.totalMatch += (userData.rain-1) * 20 * userData.priorities[1]
 	}
 	cities.sort(function(a,b){return b.totalMatch - a.totalMatch})
-	console.log(cities[0])
+
 	console.log('the top five cities for you are')
 	console.log('1: ' + cities[0].name + ", " + cities[0].province + " at " + cities[0].totalMatch + "% match")
 	console.log('2: ' + cities[1].name + ", " + cities[1].province + " at " + cities[1].totalMatch + "% match")
 	console.log('3: ' + cities[2].name + ", " + cities[2].province + " at " + cities[2].totalMatch + "% match")
-	
-	console.log(cities[1])
-	console.log(cities[10])
-	
+		
 	var cityList = {
 		first: {city: cities[0].name, prov: cities[0].province},
 		second: {city: cities[1].name, prov: cities[1].province},
