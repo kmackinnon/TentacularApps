@@ -20,6 +20,10 @@ $(document).ready(function() {
 		Reveal.navigateLeft();
 	});
 
+	$('#about').click(function() {
+		$('#aboutdialog').modal();
+	});
+
 	/* Select/deselect toggle-item's */
 	$('.toggle-item').click(function(e) {
 		if ($(this).hasClass('active')) {

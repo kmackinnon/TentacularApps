@@ -107,5 +107,25 @@ img {
 		opacity: 1;
 	}
 }
-@media(min-width:992px){}
-@media(min-width:1200px){}
+
+.modal {
+	padding-top: 15px;
+	padding-left: 5%;
+	padding-right: 5%;
+	overflow: hidden;
+}
+
+.modal-header {
+	background-color: rgb(224,224,224);
+	border: 2px solid;
+	border-radius: 20px;
+}
+
+/* Makes the following clickable */
+#backbutton {
+	cursor: pointer;
+}
+
+#about {
+	cursor: pointer;
+}
