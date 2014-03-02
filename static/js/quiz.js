@@ -77,7 +77,7 @@ $(document).ready(function() {
 		responses.emigratingfrom = $(this).attr('index');
 	});
 
-	$('#nightlife a').click(function(e) {
+	$('#population a').click(function(e) {
 		responses.population = $(this).attr('index');
 	});
 
@@ -121,23 +121,7 @@ $(document).ready(function() {
 });
 
 function resultsComputed(data, status, jqXHR) {
-	console.log(data);
 	Reveal.navigateRight();
-
-	data = {
-		first: {
-			city: "Calgary",
-			prov: "Alberta"
-		},
-		second: {
-			city: "Toronto",
-			prov: "Ontario"
-		},
-		third: {
-			city: "Montreal",
-			prov: "Quebec"
-		}
-	}
 
 	var url = 'http://maps.googleapis.com/maps/api/staticmap?format=png&sensor=false&size=640x480&scale=2&maptype=roadmap&style=feature:administrative.country|visibility:off&style=feature:water|visibility:on&style=feature:landscape|color:0x808080&style=feature:administrative.province|element:labels.text.fill|visibility:off&style=feature:administrative|element:labels.text.fill|visibility:off';
 	url += '&markers=color:red|label:1|' + encodeURIComponent(data.first.city) + ',' + encodeURIComponent(data.first.prov);

@@ -77,11 +77,11 @@ html(lang='en')
 							.list-group-item.toggle-item
 								a(lang='fr') French
 							.list-group-item.toggle-item
-								a(lang='de') German
+								a(lang='mn') Mandarin
 							.list-group-item.toggle-item
 								a(lang='es') Spanish
 							.list-group-item.toggle-item
-								a(lang='mn') Mandarin
+								a(lang='de') German
 
 							a.btn.btn-lrg.navigate-right Continue &#x00bb;
 
@@ -108,12 +108,15 @@ html(lang='en')
 								.list-group-item.navigate-right
 									a(index=5) Asia
 
-					section#nightlife
+					section#population
 						h2 What is the largest city you would live in?
 						.list-group.single-select
-							a.list-group-item.navigate-right(index=0) small city
-							a.list-group-item.navigate-right(index=1) medium city
-							a.list-group-item.navigate-right(index=2) large city
+							.list-group-item.navigate-right
+								a(index=0) Small (&lt; 100,000)
+							.list-group-item.navigate-right
+								a(index=1) Medium (&lt; 500,000)
+							.list-group-item.navigate-right
+								a(index=2) Large (&gt; 500,000)
 
 					section
 						section#occulocation
@@ -155,17 +158,6 @@ html(lang='en')
 									a(index=11) Public administration
 								.list-group-item.navigate-right
 									a(index=12) Other
-					section#temp
-						h2 How does -20&deg;C (-4&deg;F) sound?
-						h4 (Don't worry, it's not that cold everywhere all the time!)
-
-						.list-group.single-select
-							.list-group-item.navigate-right
-								a(index=0) NONONONONONONO
-							.list-group-item.navigate-right
-								a(index=1) Sure, sounds manageable.
-							.list-group-item.navigate-right
-								a(index=2) SNOWBOARD THE WORLD
 
 					section#rain
 						h2 Do you mind a bit of rain?
@@ -193,12 +185,18 @@ html(lang='en')
 						h4 (In Canadian Dollars)
 
 						.list-group.single-select
-							a.list-group-item.navigate-right(index=0) less than $20k
-							a.list-group-item.navigate-right(index=1) $20k-$40k
-							a.list-group-item.navigate-right(index=2) $40k-$60k
-							a.list-group-item.navigate-right(index=3) $60k-$80k
-							a.list-group-item.navigate-right(index=4) $80k-$100k
-							a.list-group-item.navigate-right(index=5) greater than $100k
+							.list-group-item.navigate-right
+								a(index=0) less than $20k
+							.list-group-item.navigate-right
+								a(index=1) $20k-$40k
+							.list-group-item.navigate-right
+								a(index=2) $40k-$60k
+							.list-group-item.navigate-right
+								a(index=3) $60k-$80k
+							.list-group-item.navigate-right
+								a(index=4) $80k-$100k
+							.list-group-item.navigate-right
+								a(index=5) greater than $100k
 					section#loading
 						h1 Matching you to your future home...
 						div
