@@ -18,6 +18,7 @@ exports.get = function (req, res){
 }
 	
 exports.post = function (req, res){
+	var data = JSON.parse(req)
 	var userData = {
 		jobWeight: req.body.job,
 		cultureWeight: req.body.culture,
@@ -42,6 +43,7 @@ exports.post = function (req, res){
 				if(!contains(cities, row.cityName)){
 					cities.push({
 						name: row.cityName,
+						province: row.provinceName,
 						totalValue: 0,
 						cultureMatch: 0,
 						jobMatch: 0,
@@ -81,11 +83,12 @@ function getMatchValues(userData){
 		city.totalMatch = (city.jobMatch / city.totalValue) * userData.jobWeight + 
 							(city.cultureMatch / city.totalValue) * userData.cultureWeight +
 							(city.lifeMatch / city.totalValue) * userData.lifeWeight
-		console.log(city)
+		//console.log(city.name + "__" + city.totalMatch)
 	}
 	cities.sort(function(a,b){return b.totalMatch - a.totalMatch})
 	
-	console.log('best match is ' + cities[0].name + " at " + cities[0].totalMatch + "% match")
+	console.log('best match is ' + cities[0].name + ", " + cities[0].province + " at " + cities[0].totalMatch + "% match")
+	print(cities[0])
 }
 function getCity(cityName){
 	for(var i=0; i<cities.length; i++){
