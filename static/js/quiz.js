@@ -99,11 +99,14 @@ $(document).ready(function() {
 
 	$('#budget a').click(function(e) {
 		responses.budget = $(this).attr('index');
-
+		
+		console.log(responses)
+		console.log(encodeURIComponent(JSON.stringify(responses)))
+		
 		/* AJAX POST request to /quiz */
-		$.ajax('/quiz', {
+		$.ajax('/', {
 			type: 'POST',
-			data: JSON.stringify(responses),
+			data: responses,
 			success: resultsComputed
 		});
 	});

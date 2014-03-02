@@ -26,7 +26,8 @@
 
   "dependencies": {
     "express": "~3.4.4",
-    "jade": ">= 1.2.0"
+    "jade": ">= 1.2.0",
+    "mongoose": "~3.8.8"
   },
   "devDependencies": {},
   "bundleDependencies": [],

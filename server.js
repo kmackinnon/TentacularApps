@@ -1,8 +1,7 @@
 #!/bin/env node
-/*
-	Testing server for rendering templates
-	Will NOT run on OpenShift.
-*/
+var ip_addr = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1';
+var port    = process.env.OPENSHIFT_NODEJS_PORT || '8080';
+
 var express = require('express');
 var jade = require('jade');
 
@@ -26,4 +25,4 @@ app.post('/',quiz.post);
 app.get('/results', results.get);
 
 /* Run on port 3000 */
-app.listen(3000, 'localhost');
+app.listen(port, ip_addr);
