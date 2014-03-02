@@ -26,7 +26,8 @@ function filter(row, index){
 	|| (row[TOPIC]=='Mode of transportation') 
 	|| (row[TOPIC+1]=='Average monthly shelter costs for rented dwellings ($)')
 	|| (row[TOPIC]=='Income of individuals in 2010')
-	|| (row[TOPIC+1] == 'Total population in private households by citizenship')){
+	|| (row[TOPIC+1] == 'Total population in private households by citizenship')
+	|| (row[TOPIC+1] == 'Unemployment rate')){
 		loader.addCity(row)
 	}
 }
