@@ -55,8 +55,17 @@ html, body {
 	background-color: rgb(20,20,20) !important;
 }
 
+.modal {
+	padding-top: 15px;
+	padding-left: 5%;
+	padding-right: 5%;
+	overflow: hidden;
+}
+
 .modal-header {
-	background-color: white;
+	background-color: rgb(224,224,224);
+	border: 2px solid;
+	border-radius: 20px;
 }
 
 /* Makes the following clickable */
