@@ -16,7 +16,8 @@ var responses = {
 
 Reveal.initialize({
 	controls: false,
-	progress: false
+	progress: false,
+	keyboard: false
 });
 
 $(document).ready(function() {
