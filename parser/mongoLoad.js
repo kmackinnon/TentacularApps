@@ -1,5 +1,5 @@
 var mongoose = require('mongoose')
-var parser= require('./parser')
+var parser = require('./parser')
 
 var collectionName = 'census'
 
@@ -13,7 +13,7 @@ var db = mongoose.createConnection(uri, options)
 var cities = new mongoose.Schema({
 	geocode: Number,
 	provinceName: String,
-	cityName: String,
+	ridingName: String,
 	topic: String,
 	characteristic: String,
 	total: Number
@@ -36,7 +36,7 @@ function addCity(cityData){
 	var city = new model({
 		geocode: parseFloat(cityData[0]),
 		provinceName: cityData[1],
-		cityName: cityData[2],
+		ridingName: cityData[2],
 		topic: cityData[3],
 		characteristic: cityData[4],
 		total: parseFloat(cityData[5])
@@ -44,7 +44,7 @@ function addCity(cityData){
 	collection.count({
 		geocode: city.geocode,
 		provinceName: city.provinceName,
-		cityName: city.cityName,
+		ridingName: city.ridingName,
 		topic: city.topic,
 		characteristic: city.characteristic
 	},function(err, count){
@@ -53,27 +53,16 @@ function addCity(cityData){
 		if(count == 0)
 			saveCity(city)
 		else{
-			console.log(city.cityName + ' is already here ' + count + ' times')
+			console.log(city.ridingName + ' is already here ' + count + ' times')
 			//updateCity(city)
 		}
 	})
 }
 exports.addCity = addCity
 function saveCity(city){
-	city.save(function(err){ if(err) return console.log('fuck this')})
-	console.log('saved__' + city.cityName + '__' + city.topic + '__' + city.characteristic + '__' + city.total)
+	city.save(function(err){ if(err) return console.log('whoops an error')})
+	console.log('saved__' + city.ridingName)
 }
-/*
-function updateCity(city){	
-	collection.update({	
-		geocode: city.geocode,
-		provinceName: city.provinceName,
-		cityName: city.cityName,
-		topic: city.topic,
-		characteristic: city.characteristic}, city.total, {total:true})
-	
-}*/
-
 
 
 

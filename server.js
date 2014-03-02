@@ -25,4 +25,4 @@ app.post('/',quiz.post);
 app.get('/results', results.get);
 
 /* Run on port 3000 */
-app.listen(port, ip_addr);
+app.listen(3000, ip_addr);

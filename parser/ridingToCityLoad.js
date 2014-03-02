@@ -17,39 +17,42 @@ var ridingsToCities = new mongoose.Schema({
 
 var collection = null
 var model = null
+var ran = false
 
 db.on('error',console.error.bind(console,'connection error:'));
 db.on('connected', function callback(){
+	if(!ran)
+		parser.runParser()
+	console.log('here')
+	
 	collection = db.collection(collectionName)
 	model = db.model('model',ridingsToCities, collection.name)
 	
+	
+	
 	console.log('connected to kraken: ' + collection.name);
 	
-	parser.runParser()
+	
 })
 
-exports.addRidingToCity = function(ridingData){
-	console.log(db)
+exports.addRidingToCity = function(ridingData){	
+	ran = true
+	collection = db.collection(collectionName)
+	model = db.model('model',ridingsToCities, collection.name)
+	
 	var ridingToCity = new model({
 		districtName: ridingData[0],
 		cityName: ridingData[1]
 	})
 	
-	collection.count({
-		ridingName: ridingToCity.riding,
-		cityName: ridingToCity.city
-	},function(err, count){
-		if(err) 
-			return console.log('whelp')
-		if(count == 0)
-			saveRidingToCity(ridingToCity)
-		else{
-			console.log(ridingToCity.ridingName + ' is already here ' + count + ' times')
-		}
-	})
+	saveRidingToCity(ridingToCity)
 }
 
 function saveRidingToCity(ridingToCity){
-	city.save(function(err){console.log('there was an error')})
-	console.log('saved ' + ridingToCity.ridingName + ' ' + ridingToCity.cityName)
+	if(ridingToCity != null && ridingToCity != undefined){
+		ridingToCity.save(function(err){console.log(err); console.log(ridingToCity)})
+		console.log('saved ' + ridingToCity.ridingName + ' ' + ridingToCity.cityName)
+	}
+	else
+		console.log('bad input')
 }

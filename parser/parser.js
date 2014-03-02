@@ -2,7 +2,6 @@ var loader = require('./mongoLoad')
 var csv = require('csv')
 
 var TOPIC = 3
-var count = 0
 
 function runParser(){
 	console.log('parsing started')
@@ -25,7 +24,7 @@ function filter(row, index){
 	|| (row[TOPIC]=='Industry') 
 	|| (row[TOPIC]=='Mode of transportation') 
 	|| (row[TOPIC+1]=='Average monthly shelter costs for rented dwellings ($)')
-	|| (row[TOPIC]=='Income of individuals in 2010')
+	|| (row[TOPIC+1]=='Average income ($)')
 	|| (row[TOPIC+1] == 'Total population in private households by citizenship')
 	|| (row[TOPIC+1] == 'Unemployment rate')){
 		loader.addCity(row)
