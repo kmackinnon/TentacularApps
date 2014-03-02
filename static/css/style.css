@@ -1,29 +1,26 @@
-html, body {
-	max-height: 100%;
-	/*overflow: hidden;*/
-}
-
-#imagegridcolumn {
-	padding: 0;
-}
-
-#imagegridrow {
-	padding: 15px;
-	max-height: 100%;
+.list-group-item a {
+	color: rgb(238, 238, 238) !important;
 }
 
 .hoverimage {
 	position: relative;
 }
 
+img {
+	margin: 0 !important;
+	border: 0 !important;
+}
+
 .hoverimage img {
 	width: 100%;
 	vertical-align: top;
-	margin: 0;
-	border: 0;
 }
 
 .hoverimage:after {
+	content: attr(data);
+}
+
+.hoverimage:before {
 	content: attr(rank);
 	color: #fff;
 	position: absolute;
@@ -37,20 +34,78 @@ html, body {
 	-webkit-transition: all 0.5s;
 }
 
+
 .hoverimage.selected:after {
 	opacity: 1;
 }
 
-.hoverimage:hover:after {
+.hoverimage.selected:before {
 	opacity: 1;
 }
 
-/* TODO change the blue background when selected */
+#map {
+	display: block;
+	overflow: hidden;
+	height: 50%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.list-group-item.active {
+	background-color: slategray;
+}
+
+#map-canvas {
+	height: 700px
+}
 
 .list-group-item {
 	background-color: rgb(50,50,50);
 }
 
 .list-group-item:hover {
-	background-color: rgb(20,20,20) !important;
+	background-color: rgba(20,20,20, 0.5) !important;
 }
+
+/* Mobile */
+@media(max-width:767px) {
+	body {
+		overflow-y: scroll;
+	}
+
+	.list-group {
+		display: table;
+		width: 100%;
+	}
+
+	.list-group-item {
+		height: 150px;
+		line-height: 100px;
+		display: table-row;
+		
+		font-size: 60px !important;
+	}
+
+	.list-group-item a {
+		display: table-cell;
+		vertical-align: middle;
+	}
+
+	.reveal a {
+		font-size: 60px !important;
+	}
+
+	.reveal p {
+		font-size: 40px !important;
+	}
+}
+
+@media(min-width:768px){
+	/* Only hover if not on mobile */
+	.hoverimage:hover:after, .hoverimage:hover:before {
+		opacity: 1;
+	}
+}
+@media(min-width:992px){}
+@media(min-width:1200px){}

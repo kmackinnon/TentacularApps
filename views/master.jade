@@ -44,108 +44,160 @@ html(lang='en')
 
 					section#priorities
 						h2 Tap the categories below in the order of their importance to you:
-						#imagegridrow.row
-							#imagegridcolumn.col-xs-6.col-md-3
-								.small-block-12.hoverimage(index=1)
-									img(src='img/buildings.jpg')
-								.small-block-12.hoverimage(index=2)
-									img.small-12(src='img/emerald_lake_yoho.jpg')
-							#imagegridcolumn.col-xs-6.col-md-3
-								.small-block-12.hoverimage(index=3)
-									img.small-12(src='img/place_des_arts.jpg')
-								.small-block-12.hoverimage(index=4)
-									img.small-12(src='img/buildings.jpg')
+						.row
+							.col-xs-6.col-sm-3.hoverimage(data='Employment' index=1)
+								img(src='img/buildings.jpg')
+							.col-xs-6.col-sm-3.hoverimage(data='Climate' index=2)
+								img(src='img/emerald_lake_yoho.jpg')
+							.col-xs-6.col-sm-3.hoverimage(data='Culture' index=3)
+								img(src='img/place_des_arts.jpg')
+							.col-xs-6.col-sm-3.hoverimage(data='Lifestyle' index=4)
+								img(src='img/buildings.jpg')
 
 					section#language
 						h2 Which languages are you comfortable speaking?
 						.list-group
-							a.list-group-item.toggle-item(lang='en') English
-							a.list-group-item.toggle-item(lang='fr') French
-							a.list-group-item.toggle-item(lang='de') German
-							a.list-group-item.toggle-item(lang='es') Spanish
-							a.list-group-item.toggle-item(lang='mn') Mandarin
+							.list-group-item.toggle-item
+								a(lang='en') English
+							.list-group-item.toggle-item
+								a(lang='fr') French
+							.list-group-item.toggle-item
+								a(lang='de') German
+							.list-group-item.toggle-item
+								a(lang='es') Spanish
+							.list-group-item.toggle-item
+								a(lang='mn') Mandarin
 
-							a.btn.btn-lrg.navigate-up.navigate-right Continue &#x00bb;
+							a.btn.btn-lrg.navigate-right Continue &#x00bb;
 
 					section
 						section#immigrating
 							h2 Are you moving to Canada from another country?
 							.list-group.single-select
-								a.list-group-item.navigate-down Yes
-								a.list-group-item.navigate-right No
+								.list-group-item.navigate-down
+									a Yes
+								.list-group-item.navigate-right
+									a No
 
 						section#emigratingfrom
 							h2 Which area of the world are you coming to Canada from?
 							.list-group.single-select
-								a.list-group-item.navigate-right(index=1) USA
-								a.list-group-item.navigate-right(index=2) South/Central America
-								a.list-group-item.navigate-right(index=3) Europe
-								a.list-group-item.navigate-right(index=4) Africa
-								a.list-group-item.navigate-right(index=5) Asia
+								.list-group-item.navigate-right
+									a(index=1) USA
+								.list-group-item.navigate-right
+									a(index=2) South/Central America
+								.list-group-item.navigate-right
+									a(index=3) Europe
+								.list-group-item.navigate-right
+									a(index=4) Africa
+								.list-group-item.navigate-right
+									a(index=5) Asia
 
 					section#nightlife
 						h2 Are entertainment and nightlife important to you?
 						.list-group.single-select
-							a.list-group-item.navigate-right(index=0) Yes
-							a.list-group-item.navigate-right(index=1) No
+							.list-group-item.navigate-right
+								a(index=0) Yes 
+							.list-group-item.navigate-right
+								a(index=1) No 
 
 					section
 						section#occulocation
 							h2 Does your job impact where you live?
 
 							.list-group.single-select
-								a.list-group-item.navigate-down Yes
-								a.list-group-item.navigate-right No
+								.list-group-item.navigate-down
+									a Yes
+								.list-group-item.navigate-right
+									a No
 
 						section#industry
 							h2 What industry do you work in?
 
 							.list-group.single-select
-								a.list-group-item.navigate-right(index=0) Agriculture, forestry, fishing and hunting
-								a.list-group-item.navigate-right(index=1) Mining, quarrying, and oil and gas extraction
-								a.list-group-item.navigate-right(index=2) Construction
-								a.list-group-item.navigate-right(index=3) Manufacturing
-								a.list-group-item.navigate-right(index=4) Retail trade
-								a.list-group-item.navigate-right(index=5) Finance and insurance
-								a.list-group-item.navigate-right(index=6) Professional, scientific and technical services
-								a.list-group-item.navigate-right(index=7) Management of companies and enterprises
-								a.list-group-item.navigate-right(index=8) Educational services
-								a.list-group-item.navigate-right(index=9) Health care and social assistance
-								a.list-group-item.navigate-right(index=10) Arts, entertainment and recreation
-								a.list-group-item.navigate-right(index=11) Public administration
-								a.list-group-item.navigate-right(index=12) Other
+								.list-group-item.navigate-right
+									a(index=0) Agriculture, forestry, hunting
+								.list-group-item.navigate-right
+									a(index=1) Mining, oil &amp; gas
+								.list-group-item.navigate-right
+									a(index=2) Construction
+								.list-group-item.navigate-right
+									a(index=3) Manufacturing
+								.list-group-item.navigate-right
+									a(index=4) Retail trade
+								.list-group-item.navigate-right
+									a(index=5) Finance and insurance
+								.list-group-item.navigate-right
+									a(index=6) Scientific and technical services
+								.list-group-item.navigate-right
+									a(index=7) Management
+								.list-group-item.navigate-right
+									a(index=8) Educational services
+								.list-group-item.navigate-right
+									a(index=9) Health care and social assistance
+								.list-group-item.navigate-right
+									a(index=10) Arts, entertainment and recreation
+								.list-group-item.navigate-right
+									a(index=11) Public administration
+								.list-group-item.navigate-right
+									a(index=12) Other
 					section#temp
 						h2 How does -20&deg;C (-4&deg;F) sound?
 						h4 (Don't worry, it's not that cold everywhere all the time!)
 
 						.list-group.single-select
-							a.list-group-item.navigate-right(index=0) NONONONONONONO
-							a.list-group-item.navigate-right(index=1) Sure, sounds manageable.
-							a.list-group-item.navigate-right(index=2) SNOWBOARD THE WORLD
+							.list-group-item.navigate-right
+								a(index=0) NONONONONONONO
+							.list-group-item.navigate-right
+								a(index=1) Sure, sounds manageable.
+							.list-group-item.navigate-right
+								a(index=2) SNOWBOARD THE WORLD
 
 					section#rain
 						h2 Do you mind a bit of rain?
 						.list-group.single-select
-							a.list-group-item.navigate-right(index=0) The rain is horrible
-							a.list-group-item.navigate-right(index=1) A few days of rain never hurt anybody
-							a.list-group-item.navigate-right(index=2) Rain is my favourite
+							.list-group-item.navigate-right
+								a(index=0) The rain is horrible
+							.list-group-item.navigate-right
+								a(index=1) A few days of rain never hurt anybody
+							.list-group-item.navigate-right
+								a(index=2) Rain is my favourite
 
 					section#transit
 						h2 What's your preferred mode of transportation?
 
 						.list-group.single-select
-							a.list-group-item.navigate-right(index=0) Walking
-							a.list-group-item.navigate-right(index=1) Public transit (bus/train)
-							a.list-group-item.navigate-right(index=2) Carpool
+							.list-group-item.navigate-right
+								a(index=0) Walking
+							.list-group-item.navigate-right
+								a(index=1) Public transit (bus/train)
+							.list-group-item.navigate-right
+								a(index=2) Carpool
 
 					section#budget
 						h2 What's your approximate monthly housing budget?
 						h4 (In Canadian Dollars)
 
 						.list-group.single-select
-							a.list-group-item.navigate-right(index=0) $500-$1500
-							a.list-group-item.navigate-right(index=1) $1500-$5000
-							a.list-group-item.navigate-right(index=2) $5000+
+							.list-group-item.navigate-right
+								a(index=0) $500-$1500
+							.list-group-item.navigate-right
+								a(index=1) $1500-$5000
+							.list-group-item.navigate-right
+								a(index=2) $5000+
+
+					section#loading
+						h1 Matching you to your future home...
+						div
+							img(src='/img/ajax-loader.gif')
+					section#results
+						h2 Your top matches are:
+						img#map
+						ol
+							li#first
+							li#second
+							li#third
+
 
 		script(type='text/javascript' src='js/vendor/jquery.js')
 		script(type='text/javascript' src='js/bootstrap.min.js')

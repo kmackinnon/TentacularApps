@@ -1,7 +1,3 @@
-function resultsComputed(data, status, jqXHR) {
-	
-}
-
 var responses = {
 	priorities: [],
 	languages: [],
@@ -100,9 +96,6 @@ $(document).ready(function() {
 	$('#budget a').click(function(e) {
 		responses.budget = $(this).attr('index');
 		
-		console.log(responses)
-		console.log(encodeURIComponent(JSON.stringify(responses)))
-		
 		/* AJAX POST request to /quiz */
 		$.ajax('/', {
 			type: 'POST',
@@ -110,4 +103,46 @@ $(document).ready(function() {
 			success: resultsComputed
 		});
 	});
+
+	$(document)
+		.ajaxStart(function() {
+			$('#backbutton').text('Start Again')
+			$('#backbutton').attr('disabled', 'disabled');
+			$('#backbutton').attr('href', '/');
+			$('#backbutton').click(function(e) {});
+		})
+		.ajaxStop(function() {
+			$('#backbutton').removeAttr('disabled');
+		});
 });
+
+function resultsComputed(data, status, jqXHR) {
+	console.log(data);
+	Reveal.navigateRight();
+
+	data = {
+		first: {
+			city: "Calgary",
+			prov: "Alberta"
+		},
+		second: {
+			city: "Toronto",
+			prov: "Ontario"
+		},
+		third: {
+			city: "Montreal",
+			prov: "Quebec"
+		}
+	}
+
+	var url = 'http://maps.googleapis.com/maps/api/staticmap?format=png&sensor=false&size=640x480&scale=2&maptype=roadmap&style=feature:administrative.country|visibility:off&style=feature:water|visibility:on&style=feature:landscape|color:0x808080&style=feature:administrative.province|element:labels.text.fill|visibility:off&style=feature:administrative|element:labels.text.fill|visibility:off';
+	url += '&markers=color:red|label:1|' + encodeURIComponent(data.first.city) + ',' + encodeURIComponent(data.first.prov);
+	url += '&markers=color:red|label:2|' + encodeURIComponent(data.second.city) + ',' + encodeURIComponent(data.second.prov);
+	url += '&markers=color:red|label:3|' + encodeURIComponent(data.third.city) + ',' + encodeURIComponent(data.third.prov);
+
+	$('#first').text(data.first.city + ', ' + data.first.prov);
+	$('#second').text(data.second.city + ', ' + data.second.prov);
+	$('#third').text(data.third.city + ', ' + data.third.prov);
+
+	$('#map').attr('src', url);
+}
