@@ -4,7 +4,6 @@ var responses = {
 	emigratingfrom: '',
 	population: 0,
 	industry: 0,
-	temp: 0,
 	income: 0,
 	rain: 0,
 	transit: 0
@@ -68,8 +67,8 @@ $(document).ready(function() {
 	});
 
 	$('#language .navigate-right').click(function(e) {
-		$('#language .active').each(function(index) {
-			responses.languages.push(this.lang);
+		$('#language .active a').each(function(index) {
+			responses.languages.push($(this).attr('lang'));
 		});
 	});
 
@@ -85,20 +84,19 @@ $(document).ready(function() {
 		responses.industry = $(this).attr('index');
 	});
 
-	$('#temp a').click(function(e) {
-		responses.temp = $(this).attr('index');
-	});
-
 	$('#rain a').click(function(e) {
 		responses.rain = $(this).attr('index');
 	});
 
 	$('#transit a').click(function(e) {
+		console.log($(this).attr('index'))
 		responses.transit = $(this).attr('index');
 	});
 
 	$('#budget a').click(function(e) {
 		responses.income = $(this).attr('index');
+
+		console.log(responses);
 		
 		/* AJAX POST request to /quiz */
 		$.ajax('/', {
