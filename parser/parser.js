@@ -15,7 +15,18 @@ function filter(row, index){
 			row[i] = row[i].substring(1)
 		}
 	}
-	if (((row[TOPIC]=='Ethnic origin population')&& ((row[TOPIC+1]=='Other North American origins')||(row[TOPIC+1]=='European origins')||(row[TOPIC+1]=='Latin, Central and South American origins')||(row[TOPIC+1]=='African origins')||(row[TOPIC+1]=='Asian origins')))|| (row[TOPIC]=='Religion') || (row[TOPIC]=='Language used most often at work') || (row[TOPIC]=='Industry') || (row[TOPIC]=='Mode of transportation') || (row[TOPIC+1]=='Average monthly shelter costs for rented dwellings ($)') || (row[TOPIC]=='Income of individuals in 2010')){
+	if (((row[TOPIC]=='Ethnic origin population')&& (
+			(row[TOPIC+1]=='Other North American origins')
+			||(row[TOPIC+1]=='European origins')
+			||(row[TOPIC+1]=='Latin, Central and South American origins')
+			||(row[TOPIC+1]=='African origins')
+			||(row[TOPIC+1]=='Asian origins'))) 
+	|| (row[TOPIC]=='Language used most often at work') 
+	|| (row[TOPIC]=='Industry') 
+	|| (row[TOPIC]=='Mode of transportation') 
+	|| (row[TOPIC+1]=='Average monthly shelter costs for rented dwellings ($)')
+	|| (row[TOPIC]=='Income of individuals in 2010')
+	|| (row[TOPIC+1] == 'Total population in private households by citizenship')){
 		loader.addCity(row)
 	}
 }

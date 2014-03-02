@@ -61,7 +61,7 @@ function addCity(cityData){
 exports.addCity = addCity
 function saveCity(city){
 	city.save(function(err){ if(err) return console.log('fuck this')})
-	console.log('saved')
+	console.log('saved ' + city.cityName)
 }
 /*
 function updateCity(city){	
