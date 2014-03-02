@@ -54,3 +54,16 @@ html, body {
 .list-group-item:hover {
 	background-color: rgb(20,20,20) !important;
 }
+
+.modal-header {
+	background-color: white;
+}
+
+/* Makes the following clickable */
+#backbutton {
+	cursor: pointer;
+}
+
+#about {
+	cursor: pointer;
+}
