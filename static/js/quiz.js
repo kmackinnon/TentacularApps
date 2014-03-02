@@ -2,10 +2,10 @@ var responses = {
 	priorities: [],
 	languages: [],
 	emigratingfrom: '',
-	nightlife: false,
+	population: 0,
 	industry: 0,
 	temp: 0,
-	budget: 0,
+	income: 0,
 	rain: 0,
 	transit: 0
 }
@@ -78,7 +78,7 @@ $(document).ready(function() {
 	});
 
 	$('#nightlife a').click(function(e) {
-		responses.nightlife = $(this).attr('index');
+		responses.population = $(this).attr('index');
 	});
 
 	$('#industry a').click(function(e) {
@@ -98,7 +98,7 @@ $(document).ready(function() {
 	});
 
 	$('#budget a').click(function(e) {
-		responses.budget = $(this).attr('index');
+		responses.income = $(this).attr('index');
 		
 		/* AJAX POST request to /quiz */
 		$.ajax('/', {

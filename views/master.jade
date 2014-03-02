@@ -109,12 +109,11 @@ html(lang='en')
 									a(index=5) Asia
 
 					section#nightlife
-						h2 Are entertainment and nightlife important to you?
+						h2 What is the largest city you would live in?
 						.list-group.single-select
-							.list-group-item.navigate-right
-								a(index=0) Yes 
-							.list-group-item.navigate-right
-								a(index=1) No 
+							a.list-group-item.navigate-right(index=0) small city
+							a.list-group-item.navigate-right(index=1) medium city
+							a.list-group-item.navigate-right(index=2) large city
 
 					section
 						section#occulocation
@@ -190,17 +189,16 @@ html(lang='en')
 								a(index=2) Carpool
 
 					section#budget
-						h2 What's your approximate monthly housing budget?
+						h2 What's your expected annual income?
 						h4 (In Canadian Dollars)
 
 						.list-group.single-select
-							.list-group-item.navigate-right
-								a(index=0) $500-$1500
-							.list-group-item.navigate-right
-								a(index=1) $1500-$5000
-							.list-group-item.navigate-right
-								a(index=2) $5000+
-
+							a.list-group-item.navigate-right(index=0) less than $20k
+							a.list-group-item.navigate-right(index=1) $20k-$40k
+							a.list-group-item.navigate-right(index=2) $40k-$60k
+							a.list-group-item.navigate-right(index=3) $60k-$80k
+							a.list-group-item.navigate-right(index=4) $80k-$100k
+							a.list-group-item.navigate-right(index=5) greater than $100k
 					section#loading
 						h1 Matching you to your future home...
 						div
@@ -212,7 +210,6 @@ html(lang='en')
 							li#first
 							li#second
 							li#third
-
 
 		script(type='text/javascript' src='js/vendor/jquery.js')
 		script(type='text/javascript' src='js/bootstrap.min.js')
